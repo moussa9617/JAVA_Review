@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Product;
 import com.example.demo.service.ProductService;
-import com.example.demo.utils.InventoryOuter.Inventory;
+import com.example.demo.model.InventoryOuter.Inventory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

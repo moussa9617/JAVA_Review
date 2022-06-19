@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Product;
-import com.example.demo.utils.InventoryOuter.Inventory;
+import com.example.demo.model.InventoryOuter.Inventory;
 
 public interface ProductService {
 

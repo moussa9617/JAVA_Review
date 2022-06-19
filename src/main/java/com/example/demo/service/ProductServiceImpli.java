@@ -2,8 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.model.Product;
 import com.example.demo.repositories.ProductRepository;
-import com.example.demo.utils.InventoryOuter.InventoryItem;
-import com.example.demo.utils.InventoryOuter.Inventory;
+import com.example.demo.model.InventoryOuter.InventoryItem;
+import com.example.demo.model.InventoryOuter.Inventory;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,8 +20,8 @@ public class ProductServiceImpli implements ProductService {
     public Inventory getProductsData() {
         Inventory inventory = new Inventory();
         for(Product p: productRepository.findAll()) {
-            if (inventory.containsKey(p.getNom())) {
-                InventoryItem productItem = inventory.get(p.getNom());
+            if (inventory.containsKey(p.getName())) {
+                InventoryItem productItem = inventory.get(p.getName());
 
                 if (!p.getState().equals("broken")) {
                     productItem.setQty(productItem.getQty() + 1);
@@ -30,7 +30,7 @@ public class ProductServiceImpli implements ProductService {
                 }
             }
             else {
-                inventory.put(p.getNom(), new InventoryItem(p.getNom().toLowerCase(), p.getPrice(), 1));
+                inventory.put(p.getName(), new InventoryItem(p.getName().toLowerCase(), p.getPrice(), 1));
             }
         }
         return inventory;

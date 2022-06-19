@@ -18,7 +18,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String nom;
+    private String name;
     private float price;
     private String barcode;
     @Nullable
